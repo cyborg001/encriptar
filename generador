@@ -1,8 +1,2 @@
 #!/bin/bash
-gpg --full-gen-key
-echo "Ahora se procedera a eliminar la clave secreta para ${pass}"
-echo "-----------------------------------------------------------"
-pass=$(gpg --list-keys | tail -3 | head -1 | awk '{print $3}')
-gpg --export $1 > secreta.key
-gpg --export $pass > secreta.key
-gpg --yes --delete-secret-key $pass
+/usr/bin/gpg --full-gen-key

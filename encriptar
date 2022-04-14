@@ -1,5 +1,5 @@
 #!/bin/bash
-
+gtar=/usr/bin/gpgtar
 directorios=$(ls | grep -i 'pa')
 declare -A dirss
 i=0
@@ -12,7 +12,7 @@ echo "${dirss[@]}"
 
 for ((i=0;i<${#dirss[@]};i++));
 do
-        gpgtar --encrypt --output ${HOME}/automation/${dirss[$i]}.tar -r $1 ${HOME}/automation/${dirss[$i]}
+        gtar --encrypt --output ${HOME}/automation/${dirss[$i]}.tar -r $1 ${HOME}/automation/${dirss[$i]}
 
 done
        
