@@ -1,0 +1,18 @@
+#!/bin/bash
+
+directorios=$(ls | grep -i 'pa')
+declare -A dirss
+i=0
+for n in $directorios
+do
+        dirss[$i]=$n
+        let i++
+done
+echo "${dirss[@]}"
+
+for ((i=0;i<${#dirss[@]};i++));
+do
+        gpgtar --encrypt --output ${HOME}/automation/${dirss[$i]}.tar -r $1 ${HOME}/automation/${dirss[$i]}
+
+done
+       
