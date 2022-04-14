@@ -1,0 +1,3 @@
+#!/bin/bash
+GPG=/usr/bin/gpg
+GPG --import $1
