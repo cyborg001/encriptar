@@ -2,6 +2,7 @@
 1- generardor
 2- encripta
 3- exportar_key
+4- importar_key
 
 ## uso:
 Es importante darle permiso de ejcutable a ambos scripts o simplemente

@@ -3,7 +3,7 @@ GPG=/usr/bin/gpg
 pass=$(gpg --list-keys | tail -3 | head -1 | awk '{print $3}')
 
 
-$GPG --armor --export-secret-keys carlos > ${HOME}/automation/${pass}.key.asc
+$GPG --armor --export-secret-keys ${pass} > ${HOME}/automation/${pass}.key.asc
 $GPG --yes --delete-secret-key $pass
 echo "La llave secreta ha sido eliminada del (1)anillo de confianza exportada al archivo ${HOME}/automation/secreta.key"
 echo "Por favor guardar en un lugar seguro!"
